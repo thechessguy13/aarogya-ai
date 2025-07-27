@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15-alpine # Using a specific, lightweight version
+    container_name: aarogya_db
+    restart: always
+    environment:
+      POSTGRES_USER: aarogya_user
+      POSTGRES_PASSWORD: Passworddfs01 # Change this in a real project!
+      POSTGRES_DB: aarogya_db
+    ports:
+      - "5432:5432" # Maps your local port 5432 to the container's port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: # This ensures your data persists even if the container is removed

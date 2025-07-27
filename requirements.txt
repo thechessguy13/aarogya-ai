@@ -1,0 +1,10 @@
+langchain
+langgraph
+langchain-openai
+langchain-community
+asyncpg  # <-- The async PostgreSQL driver
+greenlet # Often a dependency for SQLAlchemy async
+SQLAlchemy
+python-dotenv
+pydantic
+tavily-python
