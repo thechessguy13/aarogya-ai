@@ -11,7 +11,7 @@ from tools.food_tools import (
     search_food_database,
     log_food_to_database,
     add_new_food_to_database,
-    search_internet_tool
+    search_internet_for_nutrition
 )
 
 class FoodAgentState(TypedDict):
@@ -26,7 +26,7 @@ tools = [
     search_food_database,
     log_food_to_database,
     add_new_food_to_database,
-    search_internet_tool
+    search_internet_for_nutrition
 ]
 # ToolNode is smart and will run async tools correctly
 tool_node = ToolNode(tools)

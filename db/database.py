@@ -10,9 +10,9 @@ engine = create_async_engine(DATABASE_URL)
 async def setup_database():
     """Connects to the database and ensures all tables are created asynchronously."""
     try:
-        # engine.begin() is a transactional block
         async with engine.begin() as conn:
             logger.info("Database connection successful. Ensuring schema exists...")
+
             await conn.run_sync(lambda sync_conn: sync_conn.execute(text("""
                 CREATE TABLE IF NOT EXISTS users (
                     user_id SERIAL PRIMARY KEY,
@@ -20,7 +20,9 @@ async def setup_database():
                     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                     profile JSONB
                 );
+            """)))
 
+            await conn.run_sync(lambda sync_conn: sync_conn.execute(text("""
                 CREATE TABLE IF NOT EXISTS indian_food_items (
                     food_id SERIAL PRIMARY KEY,
                     name VARCHAR(100) NOT NULL UNIQUE,
@@ -32,7 +34,9 @@ async def setup_database():
                     carbs_grams REAL,
                     fat_grams REAL
                 );
+            """)))
 
+            await conn.run_sync(lambda sync_conn: sync_conn.execute(text("""
                 CREATE TABLE IF NOT EXISTS daily_logs (
                     log_id SERIAL PRIMARY KEY,
                     user_id INTEGER REFERENCES users(user_id) ON DELETE CASCADE,
@@ -41,13 +45,14 @@ async def setup_database():
                     details JSONB
                 );
             """)))
-        print("Schema verified/created successfully.")
+
+        logger.info("Schema verified/created successfully.")
     except Exception as e:
-        print(f"An error occurred during database setup: {e}")
+        logger.exception(f"An error occurred during database setup: {e}")
         raise
     finally:
-        # Gracefully close the engine
         await engine.dispose()
+
 
 if __name__ == '__main__':
     asyncio.run(setup_database())

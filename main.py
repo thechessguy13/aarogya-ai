@@ -24,25 +24,25 @@ async def main():
     while True:
         try:
             user_input = await asyncio.to_thread(input, "You: ")
-            if user_input.lower() in ["quit", "exit"]:
+            if user_input.lower() in ["quit", "exit","clear"]:
                 print("Goodbye!")
                 break
 
-            system_prompt = """
-            You are an expert Indian diet logging assistant named Aarogya.
-            Your goal is to accurately log the user's food intake, learning about new foods when necessary.
+            system_prompt = (
+                "You are a precise, instruction-following diet logging robot named Aarogya.\n\n"
+                "**EXECUTE THIS WORKFLOW EXACTLY:**\n"
+                "1.  For each food item, you **MUST** call the `search_food_database` tool.\n"
+                "2.  **IF THE FOOD IS FOUND:** Immediately proceed to Step 4.\n"
+                "3.  **IF THE FOOD IS NOT FOUND:**\n"
+                "    a. Call `search_internet_for_nutrition_info` **ONCE AND ONLY ONCE**.\n"
+                "    b. If the search fails or returns an error, your task for this item is **FAILED**. Report this failure in your final summary. **DO NOT PROCEED.**\n"
+                "    c. If the search succeeds, parse the data and call `add_new_food_to_database`.\n"
+                "4.  **FINAL ACTION - LOGGING:** After you have the nutritional data (from step 2 or 3c), your final action for that item is to call the `log_food_to_database` tool.\n\n"
+                "**---CRITICAL INSTRUCTION: TASK COMPLETION---**\n"
+                "The `log_food_to_database` tool is the **TERMINAL** step for any successful food item. The moment you call this tool, your work on that specific item is **100% COMPLETE.**\n"
+                "After processing all items from the user's request (either by logging them or marking them as failed), your **ONLY** remaining task is to output a single, natural language summary to the user. The summary must include the macros of the food item. **YOUR FINAL RESPONSE MUST NOT CONTAIN ANY TOOL CALLS.**"
+            )
 
-            **Your Strict Workflow:**
-            1.  For each food item the user mentions, you **MUST** first use the `search_food_database` tool.
-            2.  **If the food is found in the database:** The tool will return its nutritional data. Proceed to step 5.
-            3.  **If the food is NOT found in the database:**
-                a. You **MUST** then use the `search_internet_for_nutrition` tool to find the information. Be specific in your search query (e.g., 'calories and macros for 1 plate of chole bhature').
-                b. Carefully parse the text result from the internet search to extract the nutritional values (calories, protein, carbs, fat, serving size).
-                c. If you successfully find the data online, you **MUST** immediately call the `add_new_food_to_database` tool to save this new knowledge permanently.
-            4.  **If you cannot find the food in the database OR on the internet:** Inform the user that you were unable to find information for that specific item and cannot log it.
-            5.  **Logging Step:** Once you have the nutritional information (either from the database or the internet), calculate the total nutrition based on the quantity the user mentioned (e.g., '2 samosas'). Then, you **MUST** call the `log_food_to_database` tool to record the entry in the user's daily log.
-            6.  **Final Response:** After processing all items according to the workflow above, provide a single, final summary to the user about what was successfully logged (and from where) and what could not be found.
-            """
 
             messages = [
                 HumanMessage(content=f"{system_prompt}\n\nUser's meal: {user_input}")
@@ -60,14 +60,14 @@ async def main():
 
         except Exception:
             logger.exception("An unhandled error occurred in the main loop.")
-            print("Aarogya AI: I'm sorry, an unexpected error occurred. Please check the logs for details.")
+            print(
+                "Aarogya AI: I'm sorry, an unexpected error occurred. Please check the logs for details."
+            )
 
     # Dispose of the engine connection pool
     await engine.dispose()
     logger.info("--- System Shutting Down ---")
 
 
-
 if __name__ == "__main__":
     asyncio.run(main())
-    

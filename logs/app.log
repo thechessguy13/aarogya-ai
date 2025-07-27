@@ -1,0 +1,567 @@
+2025-07-27 14:03:10,066 - root - INFO - --- System Initializing ---
+2025-07-27 14:03:10,142 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:04:39,808 - root - INFO - --- System Initializing ---
+2025-07-27 14:04:39,877 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:04:39,883 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:04:51,989 - root - INFO - Agent: Calling model...
+2025-07-27 14:04:54,874 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:04:54,885 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'idli vada sambar'}, 'id': 'call_lEIVRuT9ePC0lZ96xp0HNbwN', 'type': 'tool_call'}]
+2025-07-27 14:04:54,887 - root - INFO - Searching local DB for 'idli vada sambar'...
+2025-07-27 14:04:54,899 - root - WARNING - 'idli vada sambar' not found in DB.
+2025-07-27 14:04:54,901 - root - INFO - Agent: Calling model...
+2025-07-27 14:04:56,480 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:04:56,482 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'query': 'calories and macros for 1 plate of idli vada sambar'}, 'id': 'call_Qv9b6psqz5VOxlJdudoIvg8j', 'type': 'tool_call'}]
+2025-07-27 14:05:27,152 - root - INFO - Agent: Calling model...
+2025-07-27 14:05:30,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:05:30,690 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'idli vada sambar', 'serving_unit': 'plate', 'serving_weight_grams': 300, 'calories': 404, 'protein_grams': 12.4, 'carbs_grams': 55, 'fat_grams': 8.4}, 'id': 'call_fCr8S8Ga6iSzacQh4Kk1CH3g', 'type': 'tool_call'}, {'name': 'log_food_to_database', 'args': {'item_name': 'idli vada sambar', 'quantity': 1, 'unit': 'plate', 'calories': 404, 'protein': 12.4, 'carbs': 55, 'fat': 8.4}, 'id': 'call_300YM0FoKNT2GT2r4TVtdZkC', 'type': 'tool_call'}]
+2025-07-27 14:05:30,692 - root - INFO - Adding new food to master DB: 'idli vada sambar'
+2025-07-27 14:05:30,693 - root - INFO - Logging to DB: 1.0 plate of idli vada sambar
+2025-07-27 14:05:30,744 - root - INFO - Agent: Calling model...
+2025-07-27 14:05:32,250 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:05:32,252 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'idli vada sambar', 'quantity': 1, 'unit': 'plate', 'calories': 404, 'protein': 12.4, 'carbs': 55, 'fat': 8.4}, 'id': 'call_m6TZuQUG4eE3EyTxdBdqVxlI', 'type': 'tool_call'}]
+2025-07-27 14:05:32,254 - root - INFO - Logging to DB: 1.0 plate of idli vada sambar
+2025-07-27 14:05:32,257 - root - INFO - Agent: Calling model...
+2025-07-27 14:05:36,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:06:24,861 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:11:03,236 - root - INFO - --- System Initializing ---
+2025-07-27 14:11:03,319 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:11:03,326 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:11:11,653 - root - INFO - Agent: Calling model...
+2025-07-27 14:11:12,720 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:11:12,731 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'water'}, 'id': 'call_bhFB71rRE77SltFNBty3KNXc', 'type': 'tool_call'}]
+2025-07-27 14:11:12,734 - root - INFO - Searching local DB for 'water'...
+2025-07-27 14:11:12,742 - root - WARNING - 'water' not found in DB.
+2025-07-27 14:11:12,745 - root - INFO - Agent: Calling model...
+2025-07-27 14:11:13,548 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:11:13,552 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'query': 'calories and macros for 1 glass of water'}, 'id': 'call_55Tny7WIJS5t3MqUKyzqmxAN', 'type': 'tool_call'}]
+2025-07-27 14:12:00,720 - root - INFO - Agent: Calling model...
+2025-07-27 14:12:02,415 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:15:54,771 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:16:10,416 - root - INFO - --- System Initializing ---
+2025-07-27 14:16:10,477 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:16:10,486 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:16:27,708 - root - INFO - Agent: Calling model...
+2025-07-27 14:16:29,057 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:16:29,073 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'lijjat udad papad'}, 'id': 'call_0pDVU7Q3zkY8eDDFeeAEnd61', 'type': 'tool_call'}]
+2025-07-27 14:16:29,077 - root - INFO - Searching local DB for 'lijjat udad papad'...
+2025-07-27 14:16:29,083 - root - WARNING - 'lijjat udad papad' not found in DB.
+2025-07-27 14:16:29,084 - root - INFO - Agent: Calling model...
+2025-07-27 14:16:30,396 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:16:30,398 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'query': 'calories and macros for 1 lijjat udad papad'}, 'id': 'call_G0lHGnwukZCFo3eySn4IEr8b', 'type': 'tool_call'}]
+2025-07-27 14:16:41,061 - root - INFO - Agent: Calling model...
+2025-07-27 14:16:42,065 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:16:42,070 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'query': 'calories and macros for 1 lijjat udad papad'}, 'id': 'call_JCYqXqvRZy1trHeeQHhsl6A5', 'type': 'tool_call'}]
+2025-07-27 14:16:43,631 - root - INFO - Agent: Calling model...
+2025-07-27 14:16:45,052 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:21:46,711 - root - INFO - --- System Initializing ---
+2025-07-27 14:21:46,765 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:21:46,770 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:21:53,108 - root - INFO - Agent: Calling model...
+2025-07-27 14:21:54,032 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:21:54,044 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'lijjat udad papad'}, 'id': 'call_lXgL0gG5oMLptTfA0LfCwHkj', 'type': 'tool_call'}]
+2025-07-27 14:21:54,046 - root - INFO - Searching local DB for 'lijjat udad papad'...
+2025-07-27 14:21:54,054 - root - WARNING - 'lijjat udad papad' not found in DB.
+2025-07-27 14:21:54,055 - root - INFO - Agent: Calling model...
+2025-07-27 14:21:55,267 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:21:55,269 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'lijjat udad papad'}, 'id': 'call_WyylR7yN43tuL30M7arKRk3z', 'type': 'tool_call'}]
+2025-07-27 14:21:55,271 - root - INFO - TOOL: Searching internet for 'lijjat udad papad'...
+2025-07-27 14:22:40,208 - root - INFO - Agent: Calling model...
+2025-07-27 14:22:41,074 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:22:41,076 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'Lijjat Udad Papad'}, 'id': 'call_W9vH1m9wjlkBunyBnN8wdPDR', 'type': 'tool_call'}]
+2025-07-27 14:22:41,078 - root - INFO - TOOL: Searching internet for 'Lijjat Udad Papad'...
+2025-07-27 14:23:26,915 - root - INFO - Agent: Calling model...
+2025-07-27 14:23:28,247 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:23:38,597 - root - INFO - Agent: Calling model...
+2025-07-27 14:23:39,345 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:23:39,347 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_ZEsU0B7M1ndDOSHQIPpd0lLj', 'type': 'tool_call'}]
+2025-07-27 14:23:39,349 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:23:39,350 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:23:39,352 - root - INFO - Agent: Calling model...
+2025-07-27 14:23:40,139 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:23:40,142 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_kHeDA7Y0Gic18MO4fxtjGTKZ', 'type': 'tool_call'}]
+2025-07-27 14:23:40,143 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:24:58,430 - root - INFO - Agent: Calling model...
+2025-07-27 14:24:59,341 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:24:59,344 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_8u2dBXfMDsoTDQSb0WfK1c8k', 'type': 'tool_call'}]
+2025-07-27 14:24:59,346 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:25:56,187 - root - INFO - Agent: Calling model...
+2025-07-27 14:25:57,967 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:26:25,234 - root - INFO - Agent: Calling model...
+2025-07-27 14:26:26,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:26:29,312 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:26:40,877 - root - INFO - --- System Initializing ---
+2025-07-27 14:26:40,938 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:26:40,944 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:26:44,492 - root - INFO - Agent: Calling model...
+2025-07-27 14:26:45,209 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:26:45,219 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_exlCVbOMY7b1QGlRRSHTzTRP', 'type': 'tool_call'}]
+2025-07-27 14:26:45,221 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:26:45,232 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:26:45,234 - root - INFO - Agent: Calling model...
+2025-07-27 14:26:45,946 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:26:45,948 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_mWsfD0JVkAeRFF3n5O3CNl57', 'type': 'tool_call'}]
+2025-07-27 14:26:45,949 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:26:45,950 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:26:45,950 - root - INFO - Agent: Calling model...
+2025-07-27 14:26:46,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:26:46,647 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_BV1UsJkjJWU5gx90ZqSZRCBt', 'type': 'tool_call'}]
+2025-07-27 14:26:46,649 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:26:46,649 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:26:46,650 - root - INFO - Agent: Calling model...
+2025-07-27 14:26:47,829 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:27:31,003 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:27:37,583 - root - INFO - --- System Initializing ---
+2025-07-27 14:27:37,651 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:27:37,657 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:27:40,717 - root - INFO - Agent: Calling model...
+2025-07-27 14:27:41,503 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:27:41,516 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_cFSpbe6e0ZO8LCsQfXk6DNTj', 'type': 'tool_call'}]
+2025-07-27 14:27:41,519 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:27:41,527 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:27:41,529 - root - INFO - Agent: Calling model...
+2025-07-27 14:27:42,425 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:27:42,428 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_XNw3UyXs4bky9RQIOH3V8Mpz', 'type': 'tool_call'}]
+2025-07-27 14:27:42,430 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:27:42,430 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:30:43,065 - root - INFO - Tavily search returned 1 results. Logging raw metadata:
+2025-07-27 14:30:43,067 - root - INFO - Agent: Calling model...
+2025-07-27 14:30:44,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:30:44,026 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_LQ5dDFkI5ynfGSmdYbnvyRKP', 'type': 'tool_call'}]
+2025-07-27 14:30:44,029 - root - INFO - TOOL: Searching internet for 'egg'...
+2025-07-27 14:30:44,029 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:30:44,691 - root - INFO - Tavily search returned 1 results. Logging raw metadata:
+2025-07-27 14:30:44,692 - root - INFO - Agent: Calling model...
+2025-07-27 14:30:46,416 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:37:47,496 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:37:55,814 - root - INFO - --- System Initializing ---
+2025-07-27 14:37:55,879 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:37:55,885 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:37:59,676 - root - INFO - Agent: Calling model...
+2025-07-27 14:38:00,512 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:38:00,521 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_TJjYelbYsadyKfVaGBsCPoGd', 'type': 'tool_call'}]
+2025-07-27 14:38:00,524 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:38:00,531 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:38:00,534 - root - INFO - Agent: Calling model...
+2025-07-27 14:38:01,408 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:38:01,410 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_8uAUV1drr8x6VTXremSSWzvn', 'type': 'tool_call'}]
+2025-07-27 14:38:01,412 - root - INFO - TOOL: Searching internet for 'egg' with a 7-second timeout...
+2025-07-27 14:38:01,413 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:38:01,413 - root - INFO - Agent: Calling model...
+2025-07-27 14:38:02,285 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:42:38,948 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:42:46,707 - root - INFO - --- System Initializing ---
+2025-07-27 14:42:46,763 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:42:46,768 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:42:49,400 - root - INFO - Agent: Calling model...
+2025-07-27 14:42:50,125 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:42:50,134 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_XbKCAsgWPaIi777W544fkAXp', 'type': 'tool_call'}]
+2025-07-27 14:42:50,136 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:42:50,142 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:42:50,143 - root - INFO - Agent: Calling model...
+2025-07-27 14:42:50,797 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:42:50,799 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_J6BfAH5GCRYwVhVJaF9szFDq', 'type': 'tool_call'}]
+2025-07-27 14:42:50,801 - root - INFO - TOOL: Searching internet for 'egg' (synchronous call)...
+2025-07-27 14:42:50,801 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:43:51,523 - root - ERROR - An unexpected error occurred during synchronous Tavily search for 'egg': Request timed out after 60 seconds.
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.tavily.com', port=443): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/tavily/tavily.py", line 90, in _search
+    response = requests.post(self.base_url + "/search", data=json.dumps(data), headers=self.headers, timeout=timeout, proxies=self.proxies)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.tavily.com', port=443): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/tools/food_tools.py", line 113, in search_internet_for_nutrition
+    search_results = client.search(query=query, search_depth="basic", max_results=3)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/tavily/tavily.py", line 140, in search
+    response_dict = self._search(query,
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/tavily/tavily.py", line 92, in _search
+    raise TimeoutError(timeout)
+tavily.errors.TimeoutError: Request timed out after 60 seconds.
+2025-07-27 14:43:51,540 - root - INFO - Agent: Calling model...
+2025-07-27 14:43:52,446 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:55:15,286 - root - INFO - --- System Initializing ---
+2025-07-27 14:55:15,345 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:55:15,351 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:55:18,002 - root - INFO - Agent: Calling model...
+2025-07-27 14:55:18,777 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:55:18,785 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_z8k6NJr2oTApzCTL1MZ8EWdv', 'type': 'tool_call'}]
+2025-07-27 14:55:18,787 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:55:18,794 - root - WARNING - 'egg' not found in DB.
+2025-07-27 14:55:18,796 - root - INFO - Agent: Calling model...
+2025-07-27 14:55:19,743 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:55:19,746 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'egg'}, 'id': 'call_QvAFbfjQWyBlTU6YDYBqJVUU', 'type': 'tool_call'}]
+2025-07-27 14:55:19,747 - root - INFO - TOOL: Searching internet for 'egg' (synchronous call)...
+2025-07-27 14:55:19,747 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of egg with macros'
+2025-07-27 14:55:22,015 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 14:55:22,015 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.nutritionix.com/food/egg", "content_snippet": "large (50g grams). Egg. Amount Per Serving. Calories 72 . % Daily Value*. Total Fat 4.8g grams 6% Daily Value. Saturated Fat 1.6g grams 8% Daily Value...."}
+2025-07-27 14:55:22,016 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.australianeggs.org.au/nutrition/calories", "content_snippet": "How Many Calories in An Egg? ; Protein. 6.3g. 12.7g ; Fat, total. 5.2g. 10.3g ; - saturated. 1.7g. 3.3g ; Carbohydrate. 0.7g. 1.4g...."}
+2025-07-27 14:55:22,016 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://www.nutritionix.com/food/whole-egg/1-large", "content_snippet": "1 Large Whole Egg. Nutrition Facts . Serving Size: large (50g grams). Whole Egg. Amount Per Serving. Calories 72. % Daily Value*...."}
+2025-07-27 14:55:22,016 - root - INFO - Formatted internet search results for 'egg' prepared for LLM.
+2025-07-27 14:55:22,017 - root - INFO - Agent: Calling model...
+2025-07-27 14:55:23,404 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:55:23,411 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'egg', 'serving_unit': 'piece', 'serving_weight_grams': 50, 'calories': 72, 'protein_grams': 6.3, 'carbs_grams': 0.7, 'fat_grams': 4.8}, 'id': 'call_dibsowaZWarj4xtbTRQVAsXI', 'type': 'tool_call'}]
+2025-07-27 14:55:23,413 - root - INFO - Adding new food to master DB: 'egg'
+2025-07-27 14:55:23,425 - root - INFO - Agent: Calling model...
+2025-07-27 14:55:24,596 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:55:24,602 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'egg', 'quantity': 1, 'unit': 'piece', 'calories': 72, 'protein': 6.3, 'carbs': 0.7, 'fat': 4.8}, 'id': 'call_Pu8Sbk2LjMwwUHfSlIFEKUtW', 'type': 'tool_call'}]
+2025-07-27 14:55:24,604 - root - INFO - Logging to DB: 1.0 piece of egg
+2025-07-27 14:55:24,613 - root - INFO - Agent: Calling model...
+2025-07-27 14:55:26,459 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:56:46,582 - root - INFO - Agent: Calling model...
+2025-07-27 14:56:47,324 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:56:47,327 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'clear'}, 'id': 'call_8bxJkO8ynW5w6hxIBN1U5tys', 'type': 'tool_call'}]
+2025-07-27 14:56:47,329 - root - INFO - Searching local DB for 'clear'...
+2025-07-27 14:56:47,331 - root - WARNING - 'clear' not found in DB.
+2025-07-27 14:56:47,332 - root - INFO - Agent: Calling model...
+2025-07-27 14:56:48,164 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:56:48,170 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'clear'}, 'id': 'call_oJNts8ZAS0Czz4r6DWMWePcl', 'type': 'tool_call'}]
+2025-07-27 14:56:48,171 - root - INFO - TOOL: Searching internet for 'clear' (synchronous call)...
+2025-07-27 14:56:48,171 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of clear with macros'
+2025-07-27 14:56:50,055 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 14:56:50,055 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.eatthismuch.com/calories/clear-soup-472443", "content_snippet": "1 serving of Sushi Chef clear soup contains 25 Calories. The macronutrient breakdown is 100% carbs, 0% fat, and 0% protein...."}
+2025-07-27 14:56:50,055 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.nutritionvalue.org/Therapeutic_nutrition_by_ENSURE_CLEAR_533972_nutritional_value.html", "content_snippet": "This serving contains 0 g of fat, 7 g of protein and 43 g of carbohydrate. The latter is 27 g sugar and g of dietary fiber, the rest is complex carbohydrate...."}
+2025-07-27 14:56:50,056 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://www.ensure.com/nutrition-products/ensure-clear-protein-drink/mixed-fruit-drink", "content_snippet": "8 grams of high-quality protein; 15 essential vitamins and minerals; 180 nutritious calories; 0 grams of fat; Refreshing fruit flavor. Additional information:...."}
+2025-07-27 14:56:50,056 - root - INFO - Formatted internet search results for 'clear' prepared for LLM.
+2025-07-27 14:56:50,057 - root - INFO - Agent: Calling model...
+2025-07-27 14:56:50,995 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:56:53,649 - root - INFO - --- System Shutting Down ---
+2025-07-27 14:57:27,356 - root - INFO - --- System Initializing ---
+2025-07-27 14:57:27,411 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 14:57:27,416 - root - INFO - Schema verified/created successfully.
+2025-07-27 14:57:31,069 - root - INFO - Agent: Calling model...
+2025-07-27 14:57:31,979 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:57:31,989 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'egg'}, 'id': 'call_Nihs2eLhlHI2Mr8OikCC27dv', 'type': 'tool_call'}]
+2025-07-27 14:57:31,991 - root - INFO - Searching local DB for 'egg'...
+2025-07-27 14:57:31,998 - root - INFO - Found 'egg' in DB: {'name': 'egg', 'serving_unit': 'piece', 'serving_weight_grams': 50.0, 'calories': 72.0, 'protein_grams': 6.300000190734863, 'carbs_grams': 0.699999988079071, 'fat_grams': 4.800000190734863}
+2025-07-27 14:57:32,000 - root - INFO - Agent: Calling model...
+2025-07-27 14:57:33,222 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:57:33,231 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'egg', 'quantity': 1, 'unit': 'piece', 'calories': 72, 'protein': 6.3, 'carbs': 0.7, 'fat': 4.8}, 'id': 'call_6wWPF8rTGeGvGOKNhvkvLq8X', 'type': 'tool_call'}]
+2025-07-27 14:57:33,233 - root - INFO - Logging to DB: 1.0 piece of egg
+2025-07-27 14:57:33,237 - root - INFO - Agent: Calling model...
+2025-07-27 14:57:34,463 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 14:57:34,465 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'egg', 'quantity': 1, 'unit': 'piece', 'calories': 72, 'protein': 6.3, 'carbs': 0.7, 'fat': 4.8}, 'id': 'call_ksH7uoLzMQC2bfeD3YAmr6BX', 'type': 'tool_call'}]
+2025-07-27 14:57:34,467 - root - INFO - Logging to DB: 1.0 piece of egg
+2025-07-27 14:57:34,470 - root - INFO - Agent: Calling model...
+2025-07-27 14:57:36,526 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:25,289 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:26,162 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:26,165 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'claer'}, 'id': 'call_xuUhrmRCyuMuiSMzoe7xz8M3', 'type': 'tool_call'}]
+2025-07-27 15:00:26,167 - root - INFO - Searching local DB for 'claer'...
+2025-07-27 15:00:26,169 - root - WARNING - 'claer' not found in DB.
+2025-07-27 15:00:26,171 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:26,936 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:26,938 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'claer'}, 'id': 'call_VkrOxxZXzaVtd3HlDuJXywPQ', 'type': 'tool_call'}]
+2025-07-27 15:00:26,940 - root - INFO - TOOL: Searching internet for 'claer' (synchronous call)...
+2025-07-27 15:00:26,940 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of claer with macros'
+2025-07-27 15:00:34,595 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 15:00:34,595 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.eatthismuch.com/calories/clear-soup-472443", "content_snippet": "Sushi Chef Clear Soup Nutrition Facts - Eat This Much 1 serving of Sushi Chef clear soup  contains 25 Calories The macronutrient breakdown is 100% carbs, 0% fat, and 0% protein. For 1 serving of Sushi Chef clear soup (9g) | Fats | 0g | 0% | | Sugar |..."}
+2025-07-27 15:00:34,596 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.fatsecret.co.za/calories-nutrition/clear-nutrition/100-whey/1-level-scoop", "content_snippet": "Clear Nutrition 100% Whey Cals 112 Fat 0.7 g Carbs 3.1 g Prot 23.5 g There are 112 calories in 1 level scoop (30 g) of Clear Nutrition 100% Whey...."}
+2025-07-27 15:00:34,596 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://fitia.app/calories-nutritional-information/clear-whey-protein-F7pphar5mo/?serving=grams-100-g", "content_snippet": "100 grams (100 g) of Clear Whey Protein (Oath Nutrition) contains 109 calories (kcal), 1 g fat, 3 g carbs and 20 g proteins. Modify the servings here...."}
+2025-07-27 15:00:34,596 - root - INFO - Formatted internet search results for 'claer' prepared for LLM.
+2025-07-27 15:00:42,651 - root - INFO - --- System Initializing ---
+2025-07-27 15:00:42,710 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 15:00:42,715 - root - INFO - Schema verified/created successfully.
+2025-07-27 15:00:48,095 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:48,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:49,008 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'mango'}, 'id': 'call_lkXRRNjn6MqpdRFIe8IpiOnp', 'type': 'tool_call'}]
+2025-07-27 15:00:49,009 - root - INFO - Searching local DB for 'mango'...
+2025-07-27 15:00:49,016 - root - WARNING - 'mango' not found in DB.
+2025-07-27 15:00:49,018 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:49,843 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:49,848 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'mango'}, 'id': 'call_iLOFrxUjapXMOglUElQek9ma', 'type': 'tool_call'}]
+2025-07-27 15:00:49,851 - root - INFO - TOOL: Searching internet for 'mango' (synchronous call)...
+2025-07-27 15:00:49,851 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of mango with macros'
+2025-07-27 15:00:51,480 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 15:00:51,480 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.verywellfit.com/mango-calories-and-nutrition-facts-3982611", "content_snippet": "One cup of mango has 99 calories, 1.4g protein, 25g carbs, and 0.6g fat. A highlight of mango nutrition is that it is rich in vitamin C...."}
+2025-07-27 15:00:51,480 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.healthline.com/nutrition/mango", "content_snippet": "Calories: 99 \u00b7 Protein: 1.4 grams \u00b7 Carbs: 24.8 grams \u00b7 Fat: 0.6 grams \u00b7 Fiber: 2.6 grams \u00b7 Sugar: 22.6 grams \u00b7 Vitamin C: 67% of the Daily Value (DV)..."}
+2025-07-27 15:00:51,480 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://www.nutritionix.com/food/mango", "content_snippet": "{MetaTags.description}}..."}
+2025-07-27 15:00:51,481 - root - INFO - Formatted internet search results for 'mango' prepared for LLM.
+2025-07-27 15:00:51,481 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:52,988 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:52,991 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'mango', 'serving_unit': 'cup', 'serving_weight_grams': 165, 'calories': 99, 'protein_grams': 1.4, 'carbs_grams': 25, 'fat_grams': 0.6}, 'id': 'call_4RhAqNnoJd1ubMwYpSIzA2eT', 'type': 'tool_call'}]
+2025-07-27 15:00:52,993 - root - INFO - Adding new food to master DB: 'mango'
+2025-07-27 15:00:53,002 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:54,151 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:00:54,153 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'mango', 'quantity': 1, 'unit': 'cup', 'calories': 99, 'protein': 1.4, 'carbs': 25, 'fat': 0.6}, 'id': 'call_D7zWHvjjKuZYjNAmJv8WZnLT', 'type': 'tool_call'}]
+2025-07-27 15:00:54,155 - root - INFO - Logging to DB: 1.0 cup of mango
+2025-07-27 15:00:54,159 - root - INFO - Agent: Calling model...
+2025-07-27 15:00:55,730 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:04:48,443 - root - INFO - --- System Shutting Down ---
+2025-07-27 15:05:04,312 - root - INFO - --- System Initializing ---
+2025-07-27 15:05:04,401 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 15:05:04,410 - root - INFO - Schema verified/created successfully.
+2025-07-27 15:05:10,013 - root - INFO - Agent: Calling model...
+2025-07-27 15:05:10,761 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:05:10,772 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'papaya'}, 'id': 'call_7nF9q2nK4a0HBFDJaKOcc3Sn', 'type': 'tool_call'}]
+2025-07-27 15:05:10,774 - root - INFO - Searching local DB for 'papaya'...
+2025-07-27 15:05:10,782 - root - WARNING - 'papaya' not found in DB.
+2025-07-27 15:05:10,784 - root - INFO - Agent: Calling model...
+2025-07-27 15:05:11,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:05:11,600 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'papaya'}, 'id': 'call_lm4uo4ylJ9rHPWvQbUKwmaa1', 'type': 'tool_call'}]
+2025-07-27 15:05:11,602 - root - INFO - TOOL: Searching internet for 'papaya' (synchronous call)...
+2025-07-27 15:05:11,602 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of papaya with macros'
+2025-07-27 15:05:13,855 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 15:05:13,855 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.nutritionix.com/food/papaya", "content_snippet": "cup 1\" pieces (145g grams). Papaya. Amount Per Serving. Calories 62. % Daily Value*. Total Fat 0.4g grams 0% Daily Value. Saturated Fat 0.1g grams 1% Daily..."}
+2025-07-27 15:05:13,856 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.verywellfit.com/papayas-nutrition-facts-calories-and-health-benefits-4114326", "content_snippet": "One cup of fresh papaya chunks (145g) has 62 calories, 91% of which come from carbs, 4% from fat, and 4% from protein. Summary. Papaya is a fat-..."}
+2025-07-27 15:05:13,856 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://www.nutritionix.com/i/usda/papayas-raw-1-fruit-large/513fceb575b8dbbc210010e9", "content_snippet": "Papayas, raw - 1 fruit, small 68 Calories ; Papayas, raw - 1 cup, mashed 99 Calories ; Papayas, raw - 1 cup 1\" pieces 62 Calories ; Papayas, raw -..."}
+2025-07-27 15:05:13,856 - root - INFO - Formatted internet search results for 'papaya' prepared for LLM.
+2025-07-27 15:05:13,857 - root - INFO - Agent: Calling model...
+2025-07-27 15:05:15,266 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:05:15,276 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'papaya', 'serving_unit': 'cup', 'serving_weight_grams': 145, 'calories': 62, 'protein_grams': 1, 'carbs_grams': 15, 'fat_grams': 0.4}, 'id': 'call_F70oRUo0eYcLOZr9suBxfRwG', 'type': 'tool_call'}]
+2025-07-27 15:05:15,278 - root - INFO - TOOL: Adding new food to master DB: 'papaya'
+2025-07-27 15:05:15,286 - root - INFO - Successfully added 'papaya' to the master food database.
+2025-07-27 15:05:15,287 - root - INFO - Agent: Calling model...
+2025-07-27 15:05:16,529 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:05:16,531 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'papaya', 'quantity': 1, 'unit': 'cup', 'calories': 62, 'protein': 1, 'carbs': 15, 'fat': 0.4}, 'id': 'call_z8uX5XH5Nk8Or3lcK9ros8YI', 'type': 'tool_call'}]
+2025-07-27 15:05:16,533 - root - INFO - TOOL: Logging to DB: 1.0 cup of papaya
+2025-07-27 15:05:16,536 - root - ERROR - DATABASE ERROR in log_food_to_database: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $2: {'item_name': 'papaya', 'quantity': 1.0,... ('dict' object has no attribute 'encode')
+[SQL: INSERT INTO daily_logs (user_id, log_type, details) VALUES ($1, 'food', $2)]
+[parameters: (1, {'item_name': 'papaya', 'quantity': 1.0, 'unit': 'cup', 'calories': 62.0, 'protein': 1.0, 'carbs': 15.0, 'fat': 0.4})]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 207, in asyncpg.protocol.protocol.Codec.encode_in_python
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 1223, in _jsonb_encoder
+    return b"\x01" + str_value.encode()
+                     ^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'encode'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 545, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 267, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 256, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 185, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $2: {'item_name': 'papaya', 'quantity': 1.0,... ('dict' object has no attribute 'encode')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $2: {'item_name': 'papaya', 'quantity': 1.0,... ('dict' object has no attribute 'encode')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ronak/workspace/aarogya-ai/tools/food_tools.py", line 65, in log_food_to_database
+    await connection.execute(stmt, {"user_id": 1, "details": details})
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 658, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/ronak/workspace/aarogya-ai/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $2: {'item_name': 'papaya', 'quantity': 1.0,... ('dict' object has no attribute 'encode')
+[SQL: INSERT INTO daily_logs (user_id, log_type, details) VALUES ($1, 'food', $2)]
+[parameters: (1, {'item_name': 'papaya', 'quantity': 1.0, 'unit': 'cup', 'calories': 62.0, 'protein': 1.0, 'carbs': 15.0, 'fat': 0.4})]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-07-27 15:05:16,549 - root - INFO - Agent: Calling model...
+2025-07-27 15:05:17,875 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:05:24,578 - root - INFO - --- System Shutting Down ---
+2025-07-27 15:07:39,206 - root - INFO - --- System Initializing ---
+2025-07-27 15:07:39,267 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 15:07:39,273 - root - INFO - Schema verified/created successfully.
+2025-07-27 15:07:43,072 - root - INFO - Agent: Calling model...
+2025-07-27 15:07:43,783 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:07:43,791 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'banana'}, 'id': 'call_ZajUA2riZ3A6ONlCh3tYhkfz', 'type': 'tool_call'}]
+2025-07-27 15:07:43,794 - root - INFO - Searching local DB for 'banana'...
+2025-07-27 15:07:43,800 - root - WARNING - 'banana' not found in DB.
+2025-07-27 15:07:43,802 - root - INFO - Agent: Calling model...
+2025-07-27 15:07:44,519 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:07:44,521 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'banana'}, 'id': 'call_F6oMlYc2RtPXNEKZXLbXoO26', 'type': 'tool_call'}]
+2025-07-27 15:07:44,523 - root - INFO - TOOL: Searching internet for 'banana' (synchronous call)...
+2025-07-27 15:07:44,523 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of banana with macros'
+2025-07-27 15:08:04,562 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 15:08:04,563 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.verywellfit.com/are-bananas-bad-for-weight-loss-3495634", "content_snippet": "Banana Nutrition Facts. One medium-sized banana (118g) provides 105 calories, 27g of carbohydrates, 14.4g of sugars, and 1 .3g of protein...."}
+2025-07-27 15:08:04,563 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.tiktok.com/discover/calories-in-extra-large-banana", "content_snippet": "100 calories banana nutrition , banana macros for health, low calorie snack ideas, banana as pre workout snack, healthy eating with bananas , nutrition tips for snacks, natural energy snacks, macro friendly foods, calorie counting for snacks, plant-b..."}
+2025-07-27 15:08:04,563 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://en.wikipedia.org/wiki/Banana", "content_snippet": "A banana is an elongated, edible fruit\u2014botanically a berry[ 1 ]\u2014produced by several kinds of large treelike herbaceous flowering plants in the genus Musa. In some countries, cooking bananas are called plantains, distinguishing them from dessert banan..."}
+2025-07-27 15:08:04,564 - root - INFO - Formatted internet search results for 'banana' prepared for LLM.
+2025-07-27 15:08:04,565 - root - INFO - Agent: Calling model...
+2025-07-27 15:08:05,927 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:08:05,930 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'banana', 'serving_unit': 'medium', 'serving_weight_grams': 118, 'calories': 105, 'protein_grams': 1.3, 'carbs_grams': 27, 'fat_grams': 0.3}, 'id': 'call_QWCn6yBgYDcFyMGXdYem9FuM', 'type': 'tool_call'}]
+2025-07-27 15:08:05,932 - root - INFO - TOOL: Adding new food to master DB: 'banana'
+2025-07-27 15:08:05,938 - root - INFO - Successfully added 'banana' to the master food database.
+2025-07-27 15:08:05,939 - root - INFO - Agent: Calling model...
+2025-07-27 15:08:06,985 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:08:06,987 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'banana', 'quantity': 1, 'unit': 'medium', 'calories': 105, 'protein': 1.3, 'carbs': 27, 'fat': 0.3}, 'id': 'call_iw55e1lic1Vzw6lgkoa1UFU7', 'type': 'tool_call'}]
+2025-07-27 15:08:06,989 - root - INFO - TOOL: Logging to DB: 1.0 medium of banana
+2025-07-27 15:08:07,000 - root - INFO - Agent: Calling model...
+2025-07-27 15:08:08,082 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:08:47,357 - root - INFO - --- System Shutting Down ---
+2025-07-27 15:08:52,456 - root - INFO - --- System Initializing ---
+2025-07-27 15:08:52,505 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 15:08:52,510 - root - INFO - Schema verified/created successfully.
+2025-07-27 15:09:15,398 - root - INFO - Agent: Calling model...
+2025-07-27 15:09:16,128 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:09:16,140 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'jalebi'}, 'id': 'call_02GVU8fscDW6SCoj92aro1rI', 'type': 'tool_call'}]
+2025-07-27 15:09:16,142 - root - INFO - Searching local DB for 'jalebi'...
+2025-07-27 15:09:16,149 - root - WARNING - 'jalebi' not found in DB.
+2025-07-27 15:09:16,151 - root - INFO - Agent: Calling model...
+2025-07-27 15:09:16,921 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:09:16,923 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_internet_for_nutrition', 'args': {'food_name': 'jalebi'}, 'id': 'call_jcWZz6Bi8cSXWSmKrIUg2Dmq', 'type': 'tool_call'}]
+2025-07-27 15:09:16,924 - root - INFO - TOOL: Searching internet for 'jalebi' (synchronous call)...
+2025-07-27 15:09:16,925 - root - INFO - Constructed Tavily Query: 'nutritional information for 1 serving of jalebi with macros'
+2025-07-27 15:09:27,848 - root - INFO - Tavily search returned 3 results. Logging raw metadata:
+2025-07-27 15:09:27,848 - root - INFO - Tavily Result Metadata: {"result_index": 1, "url": "https://www.nutritionix.com/i/nutritionix/jalebi-1-serving/56df4ebb2c5c46fb62e17601", "content_snippet": "Jalebi - 1 serving. Nutritionix. Nutrition Facts. Serving Size: serving (124g grams). Amount Per Serving. Calories 338. % Daily Value*...."}
+2025-07-27 15:09:27,849 - root - INFO - Tavily Result Metadata: {"result_index": 2, "url": "https://www.myfooddiary.com/foods/7527864/jalebi", "content_snippet": "1 piece = 55g. Amount Per Serving 150 Calories. % Daily Value* 5% Total Fat 3.5g 10% Saturated Fat 2g Trans Fat 0g 3% Cholesterol 10mg 0% Sodium 5mg...."}
+2025-07-27 15:09:27,849 - root - INFO - Tavily Result Metadata: {"result_index": 3, "url": "https://www.nutritionix.com/i/nutritionix/jalebi-1-piece/56df501174b038ea1b441fea", "content_snippet": "Jalebi - 1 piece. Nutritionix. Nutrition Facts. Serving Size: piece (55g grams). Amount Per Serving. Calories 150. % Daily Value*...."}
+2025-07-27 15:09:27,849 - root - INFO - Formatted internet search results for 'jalebi' prepared for LLM.
+2025-07-27 15:09:27,850 - root - INFO - Agent: Calling model...
+2025-07-27 15:09:29,263 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:09:29,265 - root - INFO - Agent: Model requested tool calls: [{'name': 'add_new_food_to_database', 'args': {'name': 'jalebi', 'serving_unit': 'piece', 'serving_weight_grams': 55, 'calories': 150, 'protein_grams': 2, 'carbs_grams': 30, 'fat_grams': 3.5}, 'id': 'call_7y7BLtelvPpvRhYEekNQ4ZyB', 'type': 'tool_call'}]
+2025-07-27 15:09:29,267 - root - INFO - TOOL: Adding new food to master DB: 'jalebi'
+2025-07-27 15:09:29,276 - root - INFO - Successfully added 'jalebi' to the master food database.
+2025-07-27 15:09:29,277 - root - INFO - Agent: Calling model...
+2025-07-27 15:09:30,685 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:09:30,688 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'jalebi', 'quantity': 1, 'unit': 'piece', 'calories': 150, 'protein': 2, 'carbs': 30, 'fat': 3.5}, 'id': 'call_wUFv6HhbOir5YLnrmxaxR3YH', 'type': 'tool_call'}]
+2025-07-27 15:09:30,689 - root - INFO - TOOL: Logging to DB: 1.0 piece of jalebi
+2025-07-27 15:09:30,697 - root - INFO - Agent: Calling model...
+2025-07-27 15:09:32,182 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:09:53,594 - root - INFO - --- System Shutting Down ---
+2025-07-27 15:10:54,159 - root - INFO - --- System Initializing ---
+2025-07-27 15:10:54,213 - root - INFO - Database connection successful. Ensuring schema exists...
+2025-07-27 15:10:54,218 - root - INFO - Schema verified/created successfully.
+2025-07-27 15:10:57,417 - root - INFO - Agent: Calling model...
+2025-07-27 15:10:58,222 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:10:58,231 - root - INFO - Agent: Model requested tool calls: [{'name': 'search_food_database', 'args': {'food_name': 'jalebi'}, 'id': 'call_LoG0pdMywTeY7vs4HtlGpv8Y', 'type': 'tool_call'}]
+2025-07-27 15:10:58,234 - root - INFO - Searching local DB for 'jalebi'...
+2025-07-27 15:10:58,242 - root - INFO - Found 'jalebi' in DB: {'name': 'jalebi', 'serving_unit': 'piece', 'serving_weight_grams': 55.0, 'calories': 150.0, 'protein_grams': 2.0, 'carbs_grams': 30.0, 'fat_grams': 3.5}
+2025-07-27 15:10:58,244 - root - INFO - Agent: Calling model...
+2025-07-27 15:10:59,412 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:10:59,413 - root - INFO - Agent: Model requested tool calls: [{'name': 'log_food_to_database', 'args': {'item_name': 'jalebi', 'quantity': 1, 'unit': 'piece', 'calories': 150, 'protein': 2, 'carbs': 30, 'fat': 3.5}, 'id': 'call_LOzhrUEhTUmne2wA7JqHoj0G', 'type': 'tool_call'}]
+2025-07-27 15:10:59,416 - root - INFO - TOOL: Logging to DB: 1.0 piece of jalebi
+2025-07-27 15:10:59,425 - root - INFO - Agent: Calling model...
+2025-07-27 15:11:00,587 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-27 15:11:14,537 - root - INFO - --- System Shutting Down ---
